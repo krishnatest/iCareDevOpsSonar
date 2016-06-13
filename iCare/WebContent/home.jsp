@@ -2,7 +2,7 @@
 <%
 String name = (String)session.getAttribute("sessUname");
 if(name == null)  {
-	response.sendRedirect("insuranceClaim.jsp");
+	response.sendRedirect("iCare.jsp");
 }
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

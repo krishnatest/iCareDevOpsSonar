@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="insuranceClaim" default="ProTest" basedir=".">
+<project name="iCare" default="ProTest" basedir=".">
 
 	<property name="project-name" value="${ant.project.name}" />
 	<property name="builder" value="TeamCakes" />
@@ -15,7 +15,7 @@
 		<format property="current-time" pattern="hh:mm:ss a z" locale="en" />
 	</tstamp>
 	<property name="build-directory" value="build" />
-	<property name="findbug.home" value="insuranceClaim/WebContent" />
+	<property name="findbug.home" value="iCare/WebContent" />
 	<path id="build.classpath">
 		<fileset dir="lib">
 			<include name="*.jar" />
