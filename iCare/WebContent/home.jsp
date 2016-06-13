@@ -395,7 +395,7 @@ if(name == null)  {
 			
         </div>
 		<div id="poweredby">
-			<p class="poweredby">Powered by :</p>
+			<p class="poweredby">Powered by <img src="images/csc.png" width="25" height="14"></p>
         </div>
 		
 	
