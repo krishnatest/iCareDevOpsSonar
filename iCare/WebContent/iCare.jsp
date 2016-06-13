@@ -57,7 +57,7 @@
 	<div id="loginfooterbg">
 		<div id="poweredby">
 			<p class="loginpoweredby">
-				Powered by :
+				Powered by <img src="images/csc.png" width="25" height="14">
 			</p>
 		</div>
 	</div>
