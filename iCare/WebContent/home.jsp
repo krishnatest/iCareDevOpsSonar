@@ -1,9 +1,9 @@
-<%@ page import="java.io.*,java.util.*" %>
+<%@ page import="java.io.*,java.util.*,java.text.*,icare.appointment.data.*" %>
 <%
-String name = (String)session.getAttribute("sessUname");
-if(name == null)  {
-	response.sendRedirect("iCare.jsp");
-}
+	String name = (String)session.getAttribute("sessUname");
+	if(name == null)  {
+		response.sendRedirect("iCare.jsp");
+	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,7 +14,12 @@ if(name == null)  {
 	<meta name="description" content="" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="css/style_ie.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="css/calendar.css" type="text/css" media="screen, projection" />
 	<!-- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> -->
+	
+	<script src="js/jquery.min.js"></script> <!-- jquery/1.7.1 used -->
+	<script src="js/jquery-ui-datepicker.min.js"></script>
+	<script src="js/iCare.js"></script>
 </head>
 
 <body>
@@ -94,11 +99,13 @@ if(name == null)  {
 							Book an appointment
 						</div>
 						<div class="bookcontent">
-						<div id="Apptime">
+						<div id="ApptimeCal">
 							<div class="calender ">
-							<img src="images/calendar.PNG"/>
+								<!-- <img src="images/calendar.PNG"/> -->
+								<div id="calendar"></div>
 							</div>
-							<div class="ApptitleReschedule">Preferred time</div>
+							<div class="ApptitleReschedule"> <br />
+							Preferred time</div>
 								<select class="textboxtimeReschedule"  >
 									<option>Select time</option>
 									<option>10.30</option>
@@ -159,116 +166,55 @@ if(name == null)  {
 								</div>
 								<div class="cellindex Appdivs">
 									<div id="UpcomingAppindex">
-										<div class="appTitlehomepg">            Upcoming appointments            </div>
+										<div class="appTitlehomepg">Upcoming appointments</div>
 										<div id="HomepageBox">
 											<!-- Stripbox starts here-->
-											<div id="stripbox">
-												<div class="row">
-												<!-- Stripicon-->
-													<div id="StripSpaceA">
-														<div id="StripIcon">
-															<div id="StripIconHeader">
-																Nov - 2012
+											<%
+												String clinicName = "at Clinic 10";
+												String[][] appData = UpcomingAppointments.getDateTimeDoctors(clinicName);
+												for(int i = 0; i<appData.length; i++) {
+											%>
+													<div id="stripbox">
+														<div class="row">
+														<!-- Stripicon-->
+															<div id="StripSpaceA">
+																<div id="StripIcon">
+																	<div id="StripIconHeader">
+																		<%=appData[i][0] %>
+																	</div>
+																	<div id="StripDate">
+																		<%=appData[i][1] %>
+																	</div>
+																	<div id="Stripday">
+																		<%=appData[i][2] %>
+																	</div>
+																</div>
 															</div>
-															<div id="StripDate">
-																18
-															</div>
-															<div id="Stripday">
-																Friday
-															</div>
-														</div>
-													</div>
-													<!-- Stripcontent-->
-													<div id="StripSpaceB">
-														<p><span class="AppointmentNewDoctor">Dr.Jonathan</span></p>
-														<p><span class="AppointmentnewSPL">Dermatology</span></p>
-														<p><span class="contenbold">10:00 - 10:30</span></p> 
-													</div>
-												</div>
-											</div>
-											<!-- Stripbox ends here-->   
-									
-											
-											<!-- Stripbox-->
-											<div id="stripbox">
-												<div class="row">
-												<!-- Stripicon-->
-													<div id="StripSpaceA">
-														<div id="StripIcon">
-															<div id="StripIconHeader">
-																Nov - 2012
-															</div>
-															<div id="StripDate">
-																20
-															</div>
-															<div id="Stripday">
-																Friday
+															<!-- Stripcontent-->
+															<div id="StripSpaceB">
+																<p><span 
+																<% if(i == 0) { %>
+																	class="AppointmentNewDoctor"
+																<% } else { %>
+																	class="AppointmentNewDoctorNormal"
+																<% } %>
+																><%=appData[i][3] %></span></p>
+																<p><span
+																<% if(i == 0) { %>
+																	class="AppointmentnewSPL"
+																<% } else { %>
+																	class="AppointmentnewSPLNormal"
+																<% } %>
+																><%=appData[i][4] %></span></p>
+																<p><span class="contenbold"><%=appData[i][5] %> (<%=appData[i][6] %>)</span></p> 
 															</div>
 														</div>
 													</div>
-													<!-- Stripcontent-->
-													<div id="StripSpaceB">
-														<p><span class="AppointmentNewDoctorNormal">Dr.Jonathan</span></p>
-														<p><span class="AppointmentnewSPLNormal">General medicine</span></p>
-														<p><span class="contentnormal">10:00 - 10:30</span></p>
-													</div>
-												</div>
-											</div>
-											<!-- Stripbox-->   
-								  
-											<!-- Stripbox-->
-											<div id="stripbox">
-												<div class="row">
-												<!-- Stripicon-->
-													<div id="StripSpaceA">
-														<div id="StripIcon">
-															<div id="StripIconHeader">
-																Nov - 2012
-															</div>
-															<div id="StripDate">
-																22
-															</div>
-															<div id="Stripday">
-																Friday
-															</div>
-														</div>
-													</div>
-													<!-- Stripcontent-->
-													<div id="StripSpaceB">
-														<p><span class="AppointmentNewDoctorNormal">Dr.Jonathan</span></p>
-														<p><span class="AppointmentnewSPLNormal">General medicine</span></p>
-														<p><span class="contentnormal">10:00 - 10:30</span></p>
-													</div>
-												</div>
-											</div>
-											<!-- Stripbox-->
-											
-											<!-- Stripbox-->
-											<div id="stripbox">
-												<div class="row">
-												<!-- Stripicon-->
-													<div id="StripSpaceA">
-														<div id="StripIcon">
-															<div id="StripIconHeader">
-																Nov - 2012
-															</div>
-															<div id="StripDate">
-																27
-															</div>
-															<div id="Stripday">
-																Friday
-															</div>
-														</div>
-													</div>
-													<!-- Stripcontent-->
-													<div id="StripSpaceB">
-														<p><span class="AppointmentNewDoctorNormal">Dr.Jonathan</span></p>
-														<p><span class="AppointmentnewSPLNormal">General medicine</span></p>
-														<p><span class="contentnormal">10:00 - 10:30</span></p>
-													</div>
-												</div>
-											</div>
-											<!-- Stripbox-->
+											<!-- Stripbox ends here-->
+											<%
+												}
+											%>
+
 										</div>
 										<div class="centeralign">
 											<span><a href="UpcomingAppoinments.html"  class="PPbtn hmepgbtn">Show all appointments</a></span> 
@@ -407,3 +353,11 @@ if(name == null)  {
 
 </body>
 </html>
+	<script>
+		$('#calendar').datepicker({
+			inline: true,
+			firstDay: 1,
+			showOtherMonths: true,
+			dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+		});
+	</script>

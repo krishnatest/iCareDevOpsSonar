@@ -1,3 +1,4 @@
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 //import org.apache.tomcat.util.buf.Base64;
 
 
@@ -22,7 +22,7 @@ public class UserAuthentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String uName = "test";
 	private String uPwd = "test";
-
+	public String name1;
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -91,14 +91,13 @@ public class UserAuthentication extends HttpServlet {
 			}
 		}
 		
-		
 		if (result) {
 			response.sendRedirect("home.jsp");
 		} else {
 			request.setAttribute("errorMessage", error);
 			request.getRequestDispatcher("/iCare.jsp").forward(request, response);
 		}
-	}	
+	}
 	
 
 }
