@@ -34,30 +34,11 @@ public class DevTest extends TestCase {
 
 		@org.junit.Test
 		public void test() throws InterruptedException {
-			try {
+			UpcomingAppointments myUnit = new UpcomingAppointments();
 
-				driver.get(baseUrl);
-				System.out.println(baseUrl);
-				
-				driver.findElement(By.id("userName")).clear();
-				driver.findElement(By.id("userName")).sendKeys("test");
-				
-				driver.findElement(By.id("password")).clear();
-				driver.findElement(By.id("password")).sendKeys("test");
-				
-				driver.findElement(By.id("captcha")).clear();
-				driver.findElement(By.id("captcha")).sendKeys("4");
-				
-				driver.findElement(By.id("submit")).submit();
-				Thread.sleep(5000);
+	        String result = myUnit.getDateTimeDoctors("one");
 
-				 System.out.println("Selenium Test Passed");
-
-			} catch (org.openqa.selenium.NoSuchElementException e) {
-				System.out.println("Selenium Test Failed");
-				System.out.println(e.getMessage());
-				Assert.fail("Selenium Test Failed   " + e.getMessage());
-			}
+	        assertEquals("one", result);			
 		}
 
 		@AfterClass
