@@ -2,9 +2,9 @@
 
 <BugCollection version="3.0.0" sequence="0" timestamp="1458292454655" analysisTimestamp="1458292454666" release="">
   <Project projectName="">
-	<Jar>/var/lib/jenkins/workspace/CADS-DevOps-Demo-Job/insuranceClaim/WebContent/WEB-INF/classes</Jar>
-	<AuxClasspathEntry>/var/lib/jenkins/workspace/CADS-DevOps-Demo-Job/insuranceClaim/WebContent/lib</AuxClasspathEntry>
-    <SrcDir>/var/lib/jenkins/workspace/CADS-DevOps-Demo-Job/insuranceClaim/src</SrcDir>
+	<Jar>/var/lib/jenkins/workspace/CADS-DevOpsiCare-Demo-Job/iCare/WebContent/WEB-INF/classes</Jar>
+	<AuxClasspathEntry>/var/lib/jenkins/workspace/CADS-DevOpsiCare-Demo-Job/iCare/WebContent/lib</AuxClasspathEntry>
+    <SrcDir>/var/lib/jenkins/workspace/CADS-DevOpsiCare-Demo-Job/iCare/src</SrcDir>
   </Project>
   <Errors errors="0" missingClasses="0"></Errors>
   <FindBugsSummary timestamp="Fri, 18 Mar 2016 09:14:14 +0000" total_classes="1" referenced_classes="37" total_bugs="0" total_size="111" num_packages="1" java_version="1.7.0_71" vm_version="24.65-b04" cpu_seconds="7.27" clock_seconds="8.00" peak_mbytes="43.23" alloc_mbytes="870.00" gc_seconds="0.18">
