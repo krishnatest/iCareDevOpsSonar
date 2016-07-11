@@ -39,13 +39,13 @@ public class DevTestIcare extends TestCase {
 				System.out.println(baseUrl);
 				
 				driver.findElement(By.id("StripIconHeader0")).clear();
-				driver.findElement(By.id("StripIconHeader0")).sendKeys("Test");
+				//driver.findElement(By.id("StripIconHeader0")).sendKeys("Test");
 				
 				System.out.println("Selenium Test Passed for home page");
 			} catch (org.openqa.selenium.NoSuchElementException e) {
 				System.out.println("Selenium Test Failed for home page");
 				System.out.println(e.getMessage());
-				Assert.fail("Selenium Test Failed222   " + e.getMessage());
+				Assert.fail("Selenium Test Failed for home page   " + e.getMessage());
 			}
 		}
 
