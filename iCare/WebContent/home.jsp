@@ -168,10 +168,6 @@
 									<div id="UpcomingAppindex">
 										<div class="appTitlehomepg">Upcoming appointments</div>
 										<div id="HomepageBox">
-												<div id="StripIconHeader111">
-													HERE
-												</div>
-										
 											<!-- Stripbox starts here-->
 											<%
 												String clinicName = "at Clinic 10";

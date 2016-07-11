@@ -35,30 +35,15 @@ public class DevTestIcare extends TestCase {
 		@org.junit.Test
 		public void test() throws InterruptedException {
 			try {
-
 				driver.get(baseUrl);
 				System.out.println(baseUrl);
 				
-				driver.findElement(By.id("StripIconHeader444")).clear();
-				driver.findElement(By.id("StripIconHeader444")).sendKeys("Test");
+				driver.findElement(By.id("StripIconHeader0")).clear();
+				driver.findElement(By.id("StripIconHeader0")).sendKeys("Test");
 				
-				/*
-				driver.find_element(:id, 'Element').attribute('class')
-				
-				element = @driver.find_elements(:id, "StripIconHeader")
-				element.each do |t|
-				   if t.text() == 'f,f' then
-				       result = "pass"
-				   end
-				end				
-				
-				WebElement element = driver.findElement(By.id("coolestWidgetEvah"));
-				*/
-				
-				 System.out.println("Selenium Test Passed222");
-
+				System.out.println("Selenium Test Passed for home page");
 			} catch (org.openqa.selenium.NoSuchElementException e) {
-				System.out.println("Selenium Test Failed222");
+				System.out.println("Selenium Test Failed for home page");
 				System.out.println(e.getMessage());
 				Assert.fail("Selenium Test Failed222   " + e.getMessage());
 			}
