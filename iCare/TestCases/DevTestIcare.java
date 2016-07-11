@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import org.testng.annotations.AfterClass;
 
-public class DevTest extends TestCase {
+public class DevTestIcare extends TestCase {
 
 		public static WebDriver driver;
 		private String baseUrl;
