@@ -17,6 +17,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import org.testng.annotations.AfterClass;
+import icare.appointment.data.UpcomingAppointments;
 
 public class DevTestIcare extends TestCase {
 
@@ -34,13 +35,22 @@ public class DevTestIcare extends TestCase {
 
 		@org.junit.Test
 		public void test() throws InterruptedException {
-			UpcomingAppointments myUnit = new UpcomingAppointments();
+			try {
+				UpcomingAppointments myUnit = new UpcomingAppointments();
 
-	        String result = myUnit.getDateTimeDoctors("one");
-	        assertEquals("one", result);
+				String result = myUnit.getDateTimeDoctors("one");
+				assertEquals("one", result);
 	        
-	        System.out.println("Output here: " + assertEquals("one", result));
-	        
+				System.out.println("Output here: " + assertEquals("one", result));
+	       
+				System.out.println("Selenium Test Passed2");
+
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+				System.out.println("Selenium Test Failed2");
+				System.out.println(e.getMessage());
+				Assert.fail("Selenium Test Failed2   " + e.getMessage());
+			}
+		
 		}
 
 		@AfterClass
