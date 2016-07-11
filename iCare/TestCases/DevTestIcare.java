@@ -39,15 +39,22 @@ public class DevTestIcare extends TestCase {
 				driver.get(baseUrl);
 				System.out.println(baseUrl);
 				
-				driver.findElement(By.id("StripIconHeader")).clear();
-				driver.findElement(By.id("StripIconHeader")).sendKeys("Jul - 2016");
+				driver.findElement(By.id("StripIconHeader0")).clear();
+				driver.findElement(By.id("StripIconHeader0")).sendKeys("Jul - 2016");
 				
-				driver.findElement(By.id("StripDate")).clear();
-				driver.findElement(By.id("StripDate")).sendKeys("12");
+				/*
+				driver.find_element(:id, 'Element').attribute('class')
 				
-				driver.findElement(By.id("Stripday")).clear();
-				driver.findElement(By.id("Stripday")).sendKeys("TUESDAY");
-
+				element = @driver.find_elements(:id, "StripIconHeader")
+				element.each do |t|
+				   if t.text() == 'f,f' then
+				       result = "pass"
+				   end
+				end				
+				
+				WebElement element = driver.findElement(By.id("coolestWidgetEvah"));
+				*/
+				
 				 System.out.println("Selenium Test Passed222");
 
 			} catch (org.openqa.selenium.NoSuchElementException e) {
