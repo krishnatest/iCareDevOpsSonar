@@ -178,6 +178,7 @@
 													<div id="stripbox">
 														<div class="row">
 														<!-- Stripicon-->
+														
 															<div id="StripSpaceA">
 																<div id="StripIcon">
 																	<div id="StripIconHeader">
@@ -191,6 +192,7 @@
 																	</div>
 																</div>
 															</div>
+															
 															<!-- Stripcontent-->
 															<div id="StripSpaceB">
 																<p><span 

@@ -17,7 +17,6 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import org.testng.annotations.AfterClass;
-import icare.appointment.data.UpcomingAppointments;
 
 public class DevTestIcare extends TestCase {
 
@@ -36,21 +35,26 @@ public class DevTestIcare extends TestCase {
 		@org.junit.Test
 		public void test() throws InterruptedException {
 			try {
-				UpcomingAppointments myUnit = new UpcomingAppointments();
 
-				String result = myUnit.getDateTimeDoctors("one");
-				assertEquals("one", result);
-	        
-				System.out.println("Output here: " + assertEquals("one", result));
-	       
-				System.out.println("Selenium Test Passed2");
+				driver.get(baseUrl);
+				System.out.println(baseUrl);
+				
+				driver.findElement(By.id("StripIconHeader")).clear();
+				driver.findElement(By.id("StripIconHeader")).sendKeys("test");
+				
+				driver.findElement(By.id("StripDate")).clear();
+				driver.findElement(By.id("StripDate")).sendKeys("test");
+				
+				driver.findElement(By.id("Stripday")).clear();
+				driver.findElement(By.id("Stripday")).sendKeys("4");
+
+				 System.out.println("Selenium Test Passed222");
 
 			} catch (org.openqa.selenium.NoSuchElementException e) {
-				System.out.println("Selenium Test Failed2");
+				System.out.println("Selenium Test Failed222");
 				System.out.println(e.getMessage());
-				Assert.fail("Selenium Test Failed2   " + e.getMessage());
+				Assert.fail("Selenium Test Failed222   " + e.getMessage());
 			}
-		
 		}
 
 		@AfterClass
