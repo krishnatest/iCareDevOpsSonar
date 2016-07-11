@@ -24,13 +24,6 @@
 					<div id="logininput">
 						<form action="UserAuthentication" method="post" name="iCare" id="iCare">
 							<div id="logininputcontent">
-							
-								<div id="StripIconHeader222">
-									HERE
-								</div>
-							
-							
-							
 								<div style="color: #c80000" value="">${errorMessage }</div>
 								<span class="signin"> Sign In </span><br /> 
 								<span class="username"> Username </span><br /> 

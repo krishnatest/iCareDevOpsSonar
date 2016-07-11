@@ -51,6 +51,7 @@
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
 			<test name="DevTest" todir="../TestCases" />
+			<test name="DevTestIcare" todir="../TestCases" />
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
