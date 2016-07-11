@@ -27,7 +27,8 @@ public class DevTest extends TestCase {
 
 		public void setUp() throws Exception {
 			driver = new HtmlUnitDriver();
-			baseUrl = "http://devops-devenv.ap-southeast-1.elasticbeanstalk.com/";
+			//baseUrl = "http://devops-devenv.ap-southeast-1.elasticbeanstalk.com/";
+			baseUrl = "http://localhost:6060/iCare/home.jsp";
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 		}
@@ -37,8 +38,10 @@ public class DevTest extends TestCase {
 			UpcomingAppointments myUnit = new UpcomingAppointments();
 
 	        String result = myUnit.getDateTimeDoctors("one");
-
-	        assertEquals("one", result);			
+	        assertEquals("one", result);
+	        
+	        System.out.println("Output here: " + assertEquals("one", result));
+	        
 		}
 
 		@AfterClass
