@@ -26,7 +26,6 @@ public class DevTest extends TestCase {
 		
 
 		public void setUp() throws Exception {
-			
 			driver = new HtmlUnitDriver();
 			baseUrl = "http://devopsicare-dev.ap-southeast-1.elasticbeanstalk.com/";
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
