@@ -181,9 +181,8 @@
 														
 															<div id="StripSpaceA">
 																<div id="StripIcon">
-																	<div id="StripIconHeader">
-																		<%=appData[i][0] %>
-																	</div>
+																
+																	
 																	<div id="StripDate">
 																		<%=appData[i][1] %>
 																	</div>

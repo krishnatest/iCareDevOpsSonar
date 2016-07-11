@@ -40,13 +40,13 @@ public class DevTestIcare extends TestCase {
 				System.out.println(baseUrl);
 				
 				driver.findElement(By.id("StripIconHeader")).clear();
-				driver.findElement(By.id("StripIconHeader")).sendKeys("test");
+				driver.findElement(By.id("StripIconHeader")).sendKeys("Jul - 2016");
 				
 				driver.findElement(By.id("StripDate")).clear();
-				driver.findElement(By.id("StripDate")).sendKeys("test");
+				driver.findElement(By.id("StripDate")).sendKeys("12");
 				
 				driver.findElement(By.id("Stripday")).clear();
-				driver.findElement(By.id("Stripday")).sendKeys("4");
+				driver.findElement(By.id("Stripday")).sendKeys("TUESDAY");
 
 				 System.out.println("Selenium Test Passed222");
 
