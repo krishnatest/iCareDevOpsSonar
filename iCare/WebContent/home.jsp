@@ -168,6 +168,10 @@
 									<div id="UpcomingAppindex">
 										<div class="appTitlehomepg">Upcoming appointments</div>
 										<div id="HomepageBox">
+												<div id="StripIconHeader111">
+													HERE
+												</div>
+										
 											<!-- Stripbox starts here-->
 											<%
 												String clinicName = "at Clinic 10";
@@ -182,6 +186,9 @@
 															<div id="StripSpaceA">
 																<div id="StripIcon">
 																
+																	<div id="StripIconHeader<%=i %>" class="StripIconHeaderCls">
+																		<%=appData[i][0] %>
+																	</div>
 																	
 																	<div id="StripDate">
 																		<%=appData[i][1] %>

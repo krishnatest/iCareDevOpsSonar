@@ -39,8 +39,8 @@ public class DevTestIcare extends TestCase {
 				driver.get(baseUrl);
 				System.out.println(baseUrl);
 				
-				driver.findElement(By.id("StripIconHeader0")).clear();
-				driver.findElement(By.id("StripIconHeader0")).sendKeys("Jul - 2016");
+				driver.findElement(By.id("StripIconHeader444")).clear();
+				driver.findElement(By.id("StripIconHeader444")).sendKeys("Test");
 				
 				/*
 				driver.find_element(:id, 'Element').attribute('class')

@@ -39,6 +39,10 @@ public class DevTest extends TestCase {
 				driver.get(baseUrl);
 				System.out.println(baseUrl);
 				
+				driver.findElement(By.id("StripIconHeader333")).clear();
+				driver.findElement(By.id("StripIconHeader333")).sendKeys("test");
+				
+				
 				driver.findElement(By.id("userName")).clear();
 				driver.findElement(By.id("userName")).sendKeys("test");
 				
