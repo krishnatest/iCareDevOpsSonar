@@ -168,11 +168,61 @@
 									<div id="UpcomingAppindex">
 										<div class="appTitlehomepg">Upcoming appointments</div>
 										<div id="HomepageBox">
+										
+										
+											<!-- Stripbox starts here-->
+											<%
+												String clinicName1 = "at Clinic 10";
+												String[][] appDataFirst = UpcomingAppointments.getDateTimeDoctors(clinicName1);
+											%>
+													<div id="stripbox">
+														<div class="row">
+														<!-- Stripicon-->
+														
+															<div id="StripSpaceA">
+																<div id="StripIcon">
+																	
+																	<div id="StripIconHeader0" class="StripIconHeaderCls">
+																		<%=appDataFirst[0][0] %>
+																	</div>
+																	
+																	<div id="StripDate">
+																		<%=appDataFirst[0][1] %>
+																	</div>
+																	<div id="Stripday">
+																		<%=appDataFirst[0][2] %>
+																	</div>
+																</div>
+															</div>
+															
+															<!-- Stripcontent-->
+															<div id="StripSpaceB">
+																<p><span 
+																<% if(0 == 0) { %>
+																	class="AppointmentNewDoctor"
+																<% } else { %>
+																	class="AppointmentNewDoctorNormal"
+																<% } %>
+																><%=appDataFirst[0][3] %></span></p>
+																<p><span
+																<% if(0 == 0) { %>
+																	class="AppointmentnewSPL"
+																<% } else { %>
+																	class="AppointmentnewSPLNormal"
+																<% } %>
+																><%=appDataFirst[0][4] %></span></p>
+																<p><span class="contenbold"><%=appDataFirst[0][5] %> (<%=appDataFirst[0][6] %>)</span></p> 
+															</div>
+														</div>
+													</div>
+										
+										
+										
 											<!-- Stripbox starts here-->
 											<%
 												String clinicName = "at Clinic 10";
 												String[][] appData = UpcomingAppointments.getDateTimeDoctors(clinicName);
-												for(int i = 0; i<appData.length; i++) {
+												for(int i = 1; i<appData.length; i++) {
 												
 											%>
 													<div id="stripbox">
