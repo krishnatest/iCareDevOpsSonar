@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
+import javax.servlet.http.HttpSession;
+
 import junit.framework.TestCase;
 import junit.framework.Assert;
 
@@ -23,6 +25,8 @@ public class DevTestIcare extends TestCase {
 		public static WebDriver driver;
 		private String baseUrl;
 		private BufferedReader in = null;
+		private String uName = "test";
+		private String uPwd = "test";
 		
 
 		public void setUp() throws Exception {
@@ -37,6 +41,10 @@ public class DevTestIcare extends TestCase {
 			try {
 				driver.get(baseUrl);
 				System.out.println(baseUrl);
+				
+				HttpSession session = request.getSession(true);
+				session.setAttribute("sessUname", uName);
+				session.setAttribute("sessUpwd", uPwd);
 				
 				driver.findElement(By.id("StripIconHeader0")).clear();
 				//driver.findElement(By.id("StripIconHeader0")).sendKeys("Test");
