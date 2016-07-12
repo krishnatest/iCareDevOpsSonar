@@ -47,6 +47,7 @@ public class DevTestIcare extends TestCase {
 				session.setAttribute("sessUpwd", uPwd);
 				
 				driver.findElement(By.id("StripIconHeader0")).clear();
+				driver.findElement(By.id("StripIconHeader1")).clear();
 				//driver.findElement(By.id("StripIconHeader0")).sendKeys("Test");
 				
 				System.out.println("Selenium Test Passed for home page");
