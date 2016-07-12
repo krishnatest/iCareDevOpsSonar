@@ -3,8 +3,8 @@
 
 	String nameQry = request.getParameter("name");
 	
-	if(nameQry == "test") {
-		//	
+	if(nameQry.equals("test")) {
+		//	do nothing
 	} else {
 		String name = (String)session.getAttribute("sessUname");
 		if(name == null)  {
