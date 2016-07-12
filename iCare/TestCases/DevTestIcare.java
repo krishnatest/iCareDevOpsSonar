@@ -39,14 +39,10 @@ public class DevTestIcare extends TestCase {
 		}
 
 		@org.junit.Test
-		public void test(HttpServletRequest request, HttpServletResponse response) throws InterruptedException {
+		public void test() throws InterruptedException {
 			try {
 				driver.get(baseUrl);
 				System.out.println(baseUrl);
-				
-				HttpSession session = request.getSession(true);
-				session.setAttribute("sessUname", uName);
-				session.setAttribute("sessUpwd", uPwd);
 				
 				driver.findElement(By.id("StripIconHeader0")).clear();
 				driver.findElement(By.id("StripIconHeader1")).clear();
