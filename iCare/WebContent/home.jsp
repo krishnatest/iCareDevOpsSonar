@@ -1,9 +1,6 @@
 <%@ page import="java.io.*,java.util.*,java.text.*,icare.appointment.data.*" %>
 <%
-
-	String nameQry = request.getParameter("name");
-	
-	if(nameQry.equals("test")) {
+	if(request.getParameter("name") != "") {
 		//	do nothing
 	} else {
 		String name = (String)session.getAttribute("sessUname");
