@@ -33,7 +33,7 @@ public class DevTestIcare extends TestCase {
 
 		public void setUp() throws Exception {
 			driver = new HtmlUnitDriver();
-			baseUrl = "http://devopsicare-env.ap-southeast-1.elasticbeanstalk.com/home.jsp?name=test";
+			baseUrl = "http://devopsicare-dev.ap-southeast-1.elasticbeanstalk.com/home.jsp?name=test";
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 		}
