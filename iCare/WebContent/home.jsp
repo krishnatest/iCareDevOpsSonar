@@ -176,7 +176,7 @@
 										
 										
 											<!-- Stripbox starts here-->
-											
+											  
 											<%
 												String clinicName1 = "at Clinic 10";
 												String[][] appDataFirst = UpcomingAppointments.getDateTimeDoctors(clinicName1);
