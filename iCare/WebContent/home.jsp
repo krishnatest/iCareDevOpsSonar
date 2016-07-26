@@ -228,7 +228,6 @@
 												String clinicName = "at Clinic 10";
 												String[][] appData = UpcomingAppointments.getDateTimeDoctors(clinicName);
 												for(int i = 1; i<appData.length; i++) {
-												
 											%>
 													<div id="stripbox">
 														<div class="row">
