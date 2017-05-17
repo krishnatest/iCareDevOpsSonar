@@ -51,7 +51,7 @@
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
 			<test name="DevTest" todir="../TestCases" />
-			<test name="DevTestIcare" todir="../TestCases" />
+			<!--<test name="DevTestIcare" todir="../TestCases" />-->
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
@@ -68,7 +68,7 @@
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
 			<test name="QATest" todir="../TestCases" />
-			<test name="QATestIcare" todir="../TestCases" />
+			<!--<test name="QATestIcare" todir="../TestCases" />-->
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
@@ -86,7 +86,7 @@
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
 			<test name="ProTest" todir="../TestCases" />
-			<test name="ProTestIcare" todir="../TestCases" />
+			<!--<test name="ProTestIcare" todir="../TestCases" />-->
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
