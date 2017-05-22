@@ -22,7 +22,6 @@
 		</fileset>
 	</path>
 
-
 	<target name="main">
 		<mkdir dir="${classes-directory}" />
 		<!-- <echo message="inside" /> -->
