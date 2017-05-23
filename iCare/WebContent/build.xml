@@ -10,13 +10,7 @@
 	<property name="web-directory" value="" />
 	<property name="web-xml-file" value="WEB-INF/web.xml" />
 	
-	
 	<!-- -->
-	
-	
-	
-	
-
 	<tstamp prefix="build-info">
 		<format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
 		<format property="current-time" pattern="hh:mm:ss a z" locale="en" />
@@ -130,8 +124,10 @@
 				<property name="sonar.projectName" value="Example of SonarQube Scanner for Ant Usage" />
 				<property name="sonar.projectVersion" value="1.0" />
 				<property name="sonar.language" value="java" />
-				<property name="sonar.sources" value="src" />
+				<property name="sonar.sources" value="../src" />
 				<property name="sonar.binaries" value="target" />
+				<property name="sonar.login" value="kkumar92" />
+				<property name="sonar.password" value="kkumar92" />
 				<property name="sonar.sourceEncoding" value="UTF-8" />	
 				<!-- -->			
 			</sonar>
