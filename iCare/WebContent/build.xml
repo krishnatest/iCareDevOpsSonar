@@ -20,7 +20,7 @@
 					<property name="sonar.projectName" value="sonardev" />
 					<property name="sonar.projectVersion" value="1.0" />
 					<property name="sonar.language" value="java" />
-					<property name="sonar.sources" value="../src" />
+					<property name="sonar.sources" value="WEB-INF/classes" />
 					<property name="sonar.binaries" value="WEB-INF/classes" />
 					<property name="sonar.login" value="admin" />
 					<property name="sonar.password" value="admin" />
