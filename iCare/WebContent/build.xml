@@ -117,10 +117,10 @@
 		<!-- Execute SonarQube Scanner for Ant Analysis -->
 		<sonar>
 			<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
-				<property name="sonar.host.url" value="http://sonarqube.cscdevcloud.net" />
+				<property name="sonar.host.url" value="http://52.32.55.112:8090/" />
 
 				<!-- Define the Sonar properties -->
-				<property name="sonar.projectKey" value="org.sonarqube:sonardev" />
+				<property name="sonar.projectKey" value="sonardev" />
 				<property name="sonar.projectName" value="sonardev" />
 				<property name="sonar.projectVersion" value="1.0" />
 				<property name="sonar.language" value="java" />
