@@ -1,7 +1,5 @@
 package icare.appointment.auth;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +24,6 @@ public class UserLogout extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(false);
 		session.setAttribute("sessUname", " ");
 		session.setAttribute("sessUpwd", " ");
@@ -40,8 +37,6 @@ public class UserLogout extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
 	}
 
 }
