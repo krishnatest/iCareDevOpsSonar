@@ -66,7 +66,7 @@ public class UserAuthentication extends HttpServlet {
 			result = false;
 		}
 		
-		if (!userName.equals(uName) || !password.equals(userP)) {
+		if (userName != uName || password != userP) {
 			error += "Please enter correct Username or Password .<br/>";
 			result = false;
 		}
