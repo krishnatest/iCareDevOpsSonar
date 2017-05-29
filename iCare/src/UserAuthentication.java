@@ -40,7 +40,7 @@ public class UserAuthentication extends HttpServlet {
 		String captchaStr = request.getParameter("captcha");
 		
 		try {
-			if(!captchaStr.equals("")) {
+			if(captchaStr != null) {
 				captcha = Long.parseLong(captchaStr);
 			}
         } catch (NumberFormatException e) {
@@ -50,13 +50,13 @@ public class UserAuthentication extends HttpServlet {
 
 		String error = "";
 
-		if (userName.equals("")) {
+		if (userName == null) {
 			error += "Please enter User Name.<br/>";
 			result = false;
 		}  
 		
 		
-		if (password.equals("")) {
+		if (password == null) {
 			error += "Please enter Password.<br/>";
 			result = false;
 		}
