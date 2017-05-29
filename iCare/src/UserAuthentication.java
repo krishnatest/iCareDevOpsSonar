@@ -45,7 +45,7 @@ public class UserAuthentication extends HttpServlet {
 			}
         } catch (NumberFormatException e) {
         	resultC = false;
-        	System.out.println("IndexOutOfBoundsException: " + e.getMessage());
+        	//System.out.println("IndexOutOfBoundsException: " + e.getMessage());
         }
 		
 
