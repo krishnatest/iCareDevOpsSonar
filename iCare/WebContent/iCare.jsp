@@ -31,13 +31,13 @@
 								<span class="username"> Password </span><br /> 
 									<input style="margin-bottom: 10px;" type="password" class="textbox" name="password" id="password" ><br />
 								
-								<!-- Captcha Field added .......................... Start Here - ---->
+								<!-- Captcha Field added .......................... Start Here -- -- ---->
 
 								<span class="username"> Captcha 2 + 2 =</span>
 									<input style="width: 85px;" type="text" class="textbox" name="captcha" id="captcha" >
 									<br />
  
-								<!-- Captcha Field added .......................... End Here -- ---->  
+								<!-- Captcha Field added .......................... End Here -- --  ---->  
 
 								<span>
 									<input type="submit" name="submit" id="submit" value="Sign In" class="Signbtn" />
