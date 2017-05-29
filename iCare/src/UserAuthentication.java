@@ -18,6 +18,7 @@ public class UserAuthentication extends HttpServlet {
 	private String uName = "test";
 	private String userP = "test";
 	boolean result = true;
+	boolean resultC = true;
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -33,7 +34,6 @@ public class UserAuthentication extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Long captcha = null;
-		boolean resultC = true;
 
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
@@ -61,21 +61,23 @@ public class UserAuthentication extends HttpServlet {
 			result = false;
 		}
 		
-		if (!captchaStr.equals(null) || resultC == true || captcha == 4) {
-			if (userName.equals(uName) && password.equals(userP) && captcha == 4) {
-				HttpSession session = request.getSession(true);
-				session.setAttribute("sessUname", uName);
-				session.setAttribute("sessUpwd", userP);
-				result = true;
-			} else {
-				error += "User Name or Password is incorrect.<br/>";
-				result = false;
-			}
-		} else {
+		if (captcha == null || captcha != 4) {
 			error += "Please enter correct Captcha Value.<br/>";
 			result = false;
 		}
 		
+		if (!userName.equals(uName) || !password.equals(userP)) {
+			error += "Please enter correct Username or Password .<br/>";
+			result = false;
+		}
+		
+		if (userName.equals(uName) && password.equals(userP) && captcha == 4) {
+			// Create a session object if it is already not  created.
+			HttpSession session = request.getSession(true);
+			session.setAttribute("sessUname", uName);
+			session.setAttribute("sessUpwd", userP);
+			result = true;
+		}	
 		
 		if (result) {
 			response.sendRedirect("home.jsp");
