@@ -16,7 +16,7 @@ public class UserAuthentication extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private String uName = "test";
-	private String uPwd = "test";
+	private String userP = "test";
 	boolean result = true;
 	
 	/**
@@ -51,8 +51,6 @@ public class UserAuthentication extends HttpServlet {
 
 		String error = "";
 
-		//AppWorks Logical Error Introduce
-		//if (userName == "") {
 		if (userName.equals("")) {
 			error += "Please enter User Name.<br/>";
 			result = false;
@@ -68,11 +66,11 @@ public class UserAuthentication extends HttpServlet {
 			error += "Please enter correct Captcha Value.<br/>";
 			result = false;
 		} else {
-			if (userName.equals(uName) && password.equals(uPwd) && captcha == 4) {
+			if (userName.equals(uName) && password.equals(userP) && captcha == 4) {
 				// Create a session object if it is already not  created.
 				HttpSession session = request.getSession(true);
 				session.setAttribute("sessUname", uName);
-				session.setAttribute("sessUpwd", uPwd);
+				session.setAttribute("sessUpwd", userP);
 				result = true;
 			} else {
 				error += "User Name or Password is incorrect.<br/>";
