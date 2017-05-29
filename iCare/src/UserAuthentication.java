@@ -1,8 +1,4 @@
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Enumeration;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
@@ -10,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-//import org.apache.tomcat.util.buf.Base64;
 
 
 /**
@@ -22,14 +17,14 @@ public class UserAuthentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String uName = "test";
 	private String uPwd = "test";
-	public String name1;
+	boolean result = true;
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// Auto-generated method stub
 	}
 	
 	/**
@@ -37,7 +32,6 @@ public class UserAuthentication extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		Long captcha = null;
 		boolean resultC = true;
 
@@ -56,8 +50,6 @@ public class UserAuthentication extends HttpServlet {
 		
 
 		String error = "";
-
-		boolean result = true;
 
 		//AppWorks Logical Error Introduce
 		//if (userName == "") {
@@ -81,9 +73,6 @@ public class UserAuthentication extends HttpServlet {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("sessUname", uName);
 				session.setAttribute("sessUpwd", uPwd);
-				
-				//System.out.println(session.getAttribute("sessUname"));
-				//System.out.println(session.getAttribute("sessUpwd"));
 				result = true;
 			} else {
 				error += "User Name or Password is incorrect.<br/>";
