@@ -45,7 +45,6 @@ public class UserAuthentication extends HttpServlet {
 			}
         } catch (NumberFormatException e) {
         	resultC = false;
-        	//System.out.println("IndexOutOfBoundsException: " + e.getMessage());
         }
 		
 
@@ -62,12 +61,8 @@ public class UserAuthentication extends HttpServlet {
 			result = false;
 		}
 		
-		if (captcha == null || resultC == false || captcha != 4) {
-			error += "Please enter correct Captcha Value.<br/>";
-			result = false;
-		} else {
+		if (!captchaStr.equals(null) || resultC == true || captcha == 4) {
 			if (userName.equals(uName) && password.equals(userP) && captcha == 4) {
-				// Create a session object if it is already not  created.
 				HttpSession session = request.getSession(true);
 				session.setAttribute("sessUname", uName);
 				session.setAttribute("sessUpwd", userP);
@@ -76,7 +71,11 @@ public class UserAuthentication extends HttpServlet {
 				error += "User Name or Password is incorrect.<br/>";
 				result = false;
 			}
+		} else {
+			error += "Please enter correct Captcha Value.<br/>";
+			result = false;
 		}
+		
 		
 		if (result) {
 			response.sendRedirect("home.jsp");
