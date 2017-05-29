@@ -73,7 +73,7 @@ public class UserAuthentication extends HttpServlet {
 		}
 
 		if (userName == uName  && password == userP && captcha == 4) {
-			// Create a session object if it is already not created.
+			// Create a session object if it is already not created. 
 			HttpSession session = request.getSession(true);
 			session.setAttribute("sessUname", uName);
 			session.setAttribute("sessUpwd", userP);
